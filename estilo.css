@@ -3,39 +3,68 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(to bottom, rgb(9, 2, 107), rgb(248, 115, 53));
+    background-size: 100% 200%; /* Ajusta la altura al valor deseado */
+    animation: background 15s linear infinite; /* Ajusta la duración del ciclo y velocidad de cambio */
 }
-.titulo{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 2rem;
-    padding: 2rem;
 
+@keyframes background {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -100%;
+    }
+}
+
+/* Estilos base de la barra de navegación */
+.navbar {
+    list-style: none;
+    padding: 2px;
+    margin: 2px;
+    justify-content:center;
+    
+}
+
+.navbar li {
+    margin-bottom: 2px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    background-color: #eeeeee00;
+    transition: 0.5s; /*Transición suave*/
+}
+
+/* Estilos al pasar el mouse sobre los elementos de navegación */
+.navbar a:hover {
+    background-color: #583602;
+    color:white;
+}
+
+/*Carrusel*/
+.bloque{
+    padding: 1rem;
+    height: auto;
+ 
 }
 
 header {
-    background-color: #2b2b2b;
-    color: #fff;
+    background-color: #000000;
+    color: #f3f3f3;
     text-align: center;
     padding: 20px 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.Encabezado{
+    color: #eee;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
 }
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #332c2c;
-    font-weight: bold;
-}
-
-/* Estilos de productos */
 .productos {
     display: flex;
     justify-content: space-around;
@@ -57,7 +86,78 @@ nav a {
     height: auto;
 }
 
+/* Estilos para los botones "Añadir" */
+.producto button {
+    background-color: #043c75; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out; 
+}
 
+.producto button:hover {
+    background-color: #041c36; 
+}
+
+/* Agregar una animación de escala al botón al hacer clic */
+.producto button:active {
+    transform: scale(0.90); 
+}
+
+
+/* Estilos del formulario */
+.contacto {
+    text-align: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.contacto form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 5px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.contacto h2 {
+    font-size: 24px;
+}
+
+.contacto label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilos para el formulario en dispositivos más pequeños */
+@media (max-width: 600px) {
+    .contacto form {
+        padding: 10px;
+    }
+}
 
 /* Estilos de pie de página */
 footer {
